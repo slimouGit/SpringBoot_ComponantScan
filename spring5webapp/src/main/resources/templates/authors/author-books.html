@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Framework Guru</title>
+</head>
+<body>
+<h1>Author Books</h1>
+
+<h3 th:text="${author_firstname}">Author</h3>
+<h3 th:text="${author_lastname}">Author</h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+    </tr>
+    <tr th:each="book : ${author_books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.title}"></td>
+    </tr>
+</table>
+
+<form th:action="@{/authors}">
+    <input type="submit" value="Authors"/>
+</form>
+
+</body>
+</html>

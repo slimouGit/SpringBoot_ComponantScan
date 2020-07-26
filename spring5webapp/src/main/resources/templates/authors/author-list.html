@@ -17,6 +17,11 @@
         <td th:text="${author.id}"></td>
         <td th:text="${author.firstname}"></td>
         <td th:text="${author.lastname}"></td>
+        <td>
+            <form method="POST" th:action="@{/author-books(id=${author.id})}">
+                <button type="submit" name="submit" value="value" class="link-button">Books</button>
+            </form>
+        </td>
     </tr>
 
 </table>
