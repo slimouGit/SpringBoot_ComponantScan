@@ -20,7 +20,7 @@ public class AuthorController {
     }
 
     @RequestMapping("/authors")
-    public String getAuthors(Model model){
+    public String getAuthors(Model model) {
 
         model.addAttribute("authors", authorRepository.findAll());
 
@@ -28,7 +28,7 @@ public class AuthorController {
     }
 
     @RequestMapping("/author-books")
-    public String getAuthorBooks(@RequestParam("id") Long id, Model model){
+    public String getAuthorBooks(@RequestParam("id") Long id, Model model) {
 
         model.addAttribute("author_firstname", authorRepository.findById(id).get().getFirstname());
         model.addAttribute("author_lastname", authorRepository.findById(id).get().getLastname());
